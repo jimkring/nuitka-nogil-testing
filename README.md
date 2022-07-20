@@ -1,2 +1,2 @@
 # nuitka-nogil-testing
-Testing nuitka builds on Python Multithreading without GIL https://github.com/colesbury/nogil
+Testing [nuitka](https://github.com/Nuitka/Nuitka) stand-alone executable builds on [nogil](https://github.com/colesbury/nogil) (Python Multithreading without GIL)
