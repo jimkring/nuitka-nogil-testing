@@ -10,7 +10,12 @@ RUN pip install -U --force-reinstall "https://github.com/Nuitka/Nuitka/archive/f
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
-RUN python -m nuitka --standalone main.py
+
+# try building as a module
+RUN python -m nuitka main.py
+
+# try building as a standalone exe
+#RUN python -m nuitka --standalone main.py
 
 #CMD [ "python", "./main.py" ]
 
