@@ -12,10 +12,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # try building as a module
-#RUN python -m nuitka --experimental=nogil main.py
+RUN python -m nuitka main.py
 
 # try building as a standalone exe
-RUN python -m nuitka --experimental=nogil --standalone main.py
+#RUN python -m nuitka --standalone main.py
 
 #CMD [ "python", "./main.py" ]
 
