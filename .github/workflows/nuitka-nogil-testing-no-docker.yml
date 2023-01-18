@@ -19,8 +19,8 @@ jobs:
     - name: Set up Python nogil-3.9.10
       run: |
         curl https://pyenv.run | bash
-        ./.pyenv/bin/pyenv install nogil-3.9.10
-        ./.pyenv/bin/pyenv global nogil-3.9.10
+        /home/runner/.pyenv/bin/pyenv install nogil-3.9.10
+        /home/runner/.pyenv/bin/pyenv global nogil-3.9.10
         python -V
     - name: Install dependencies
       run: |
