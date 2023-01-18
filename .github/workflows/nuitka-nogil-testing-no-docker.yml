@@ -14,14 +14,24 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        python:
+          - 'nogil-3.9.10'
+
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python nogil-3.9.10
-      run: |
-        curl https://pyenv.run | bash
-        /home/runner/.pyenv/bin/pyenv install nogil-3.9.10
-        /home/runner/.pyenv/bin/pyenv global nogil-3.9.10
-        python -V
+    # - name: Set up Python nogil-3.9.10
+    #   run: |
+    #     curl https://pyenv.run | bash
+    #     /home/runner/.pyenv/bin/pyenv install nogil-3.9.10
+    #     /home/runner/.pyenv/bin/pyenv global nogil-3.9.10
+    #     python -V
+    - name: Install Python (with pyenv)
+      uses: gabrielfalcao/pyenv-action@v11
+      with:
+        default: "${{ matrix.python }}"
+        # command: pip install -U pip  # upgrade pip after installing python
     - name: Install dependencies
       run: |
         pip install -U --force-reinstall "https://github.com/Nuitka/Nuitka/archive/factory.zip"
