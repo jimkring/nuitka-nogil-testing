@@ -3,8 +3,7 @@ FROM nogil/python
 # avoids message -> "debconf: delaying package configuration, since apt-utils is not installed"
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update
-RUN apt-get install patchelf
+RUN apt-get update && apt-get install -y apt-utils && apt-get install -y patchelf
 
 WORKDIR /usr/src/app
 
