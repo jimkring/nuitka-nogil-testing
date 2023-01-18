@@ -1,7 +1,7 @@
 FROM nogil/python
 
-RUN apt update
-RUN apt install patchelf
+RUN apt-get update
+RUN apt-get install patchelf
 
 WORKDIR /usr/src/app
 
