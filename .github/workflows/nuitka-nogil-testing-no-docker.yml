@@ -18,6 +18,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Set up Python nogil-3.9.10
       run: |
+        curl https://pyenv.run | bash
         pyenv install nogil-3.9.10
         pyenv global nogil-3.9.10
         python -V
