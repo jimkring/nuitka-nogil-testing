@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 
 COPY requirements.txt ./
 #RUN pip install -U --force-reinstall "https://github.com/jimkring/Nuitka/archive/factory.zip"
-RUN pip install nuitka
+RUN pip install git+https://github.com/Nuitka/Nuitka
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
