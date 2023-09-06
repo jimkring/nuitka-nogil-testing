@@ -10,7 +10,8 @@ ordered-set==4.1.0
     # via -r requirements.in
 wheel==0.37.1
     # via -r requirements.in
-git+https://github.com/indygreg/python-zstandard@0.21.0
+#git+https://github.com/indygreg/python-zstandard@0.21.0
+git+https://github.com/jimkring/python-zstandard-nogil@main
 #zstandard==0.18.0
     # via -r requirements.in
 
