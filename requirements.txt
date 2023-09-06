@@ -4,12 +4,13 @@
 #
 #    pip-compile
 #
-#nuitka==0.9.6
+git+https://github.com/Nuitka/Nuitka@factory
     # via -r requirements.in
 ordered-set==4.1.0
     # via -r requirements.in
 wheel==0.37.1
     # via -r requirements.in
+git+https://github.com/indygreg/python-zstandard@0.21.0
 #zstandard==0.18.0
     # via -r requirements.in
 
