@@ -8,8 +8,8 @@ RUN apt-get update && apt-get install -y apt-utils && apt-get install -y patchel
 WORKDIR /usr/src/app
 
 COPY requirements.txt ./
-RUN pip install -U --force-reinstall "https://github.com/jimkring/Nuitka/archive/factory.zip"
-# RUN pip install -U --force-reinstall "https://github.com/Nuitka/Nuitka/archive/factory.zip"
+#RUN pip install -U --force-reinstall "https://github.com/jimkring/Nuitka/archive/factory.zip"
+RUN pip install -U --force-reinstall "https://github.com/Nuitka/Nuitka/archive/factory.zip"
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
