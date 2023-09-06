@@ -21,6 +21,7 @@ jobs:
       run: docker build . --file Dockerfile --tag nuitka-nogil-testing:$(date +%s)
     - name: "Upload Artifacts"
       uses: actions/upload-artifact@v3
+      if: always()
       with:
         name: nuitka crash report
         path: |
