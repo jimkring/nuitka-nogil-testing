@@ -19,3 +19,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag nuitka-nogil-testing:$(date +%s)
+    - name: "Upload Artifacts"
+      uses: actions/upload-artifact@v3
+      with:
+        name: nuitka crash report
+        path: |
+          nuitka-crash-report.xml
