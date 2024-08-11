@@ -44,3 +44,6 @@ jobs:
     - name: Build Nuitka App
       run: |
         python -m nuitka main.py
+    - uses: actions/upload-artifact@v4
+      with:
+        path: nuitka-crash-report.xml
