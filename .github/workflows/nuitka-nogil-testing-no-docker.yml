@@ -29,7 +29,7 @@ jobs:
     #     /home/runner/.pyenv/bin/pyenv global nogil-3.9.10
     #     python -V
     - name: Install Python (with pyenv)
-      uses: gabrielfalcao/pyenv-action@v11
+      uses: gabrielfalcao/pyenv-action@v17
       with:
         default: "${{ matrix.python }}"
         # command: pip install -U pip  # upgrade pip after installing python
