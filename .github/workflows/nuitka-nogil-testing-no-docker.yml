@@ -48,4 +48,5 @@ jobs:
       uses: actions/upload-artifact@v4
       if: failure()
       with:
+        name: nuitka-crash-report.xml
         path: nuitka-crash-report.xml
