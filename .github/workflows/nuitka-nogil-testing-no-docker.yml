@@ -39,8 +39,8 @@ jobs:
     #     # command: pip install -U pip  # upgrade pip after installing python
     - name: Install dependencies
       run: |
-        pip install -U --force-reinstall "https://github.com/Nuitka/Nuitka/archive/factory.zip"
-        pip install --no-cache-dir -r requirements.txt
+        pip install --no-cache-dir -r requirements.txt        
+      # pip install -U --force-reinstall "https://github.com/Nuitka/Nuitka/archive/factory.zip"
     - name: Build Nuitka App
       run: |
         python -m nuitka main.py
