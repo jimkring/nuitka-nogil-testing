@@ -17,10 +17,13 @@ jobs:
 
     strategy:
       matrix:
-        python:
-          - ' 3.13.0-rc.1'
+        python-version:
+          - '3.13t'
 
     steps:
+    - uses: deadsnakes/action
+      with:
+        python-version: ${{ matrix.python-version }}
     - uses: actions/checkout@v4
     # - name: Set up Python nogil-3.9.10
     #   run: |
@@ -28,11 +31,11 @@ jobs:
     #     /home/runner/.pyenv/bin/pyenv install nogil-3.9.10
     #     /home/runner/.pyenv/bin/pyenv global nogil-3.9.10
     #     python -V
-    - name: Install Python (with pyenv)
-      uses: gabrielfalcao/pyenv-action@v18
-      with:
-        default: "${{ matrix.python }}"
-        # command: pip install -U pip  # upgrade pip after installing python
+    # - name: Install Python (with pyenv)
+    #   uses: gabrielfalcao/pyenv-action@v18
+    #   with:
+    #     default: "${{ matrix.python }}"
+    #     # command: pip install -U pip  # upgrade pip after installing python
     - name: Install dependencies
       run: |
         pip install -U --force-reinstall "https://github.com/Nuitka/Nuitka/archive/factory.zip"
