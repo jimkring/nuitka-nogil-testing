@@ -40,7 +40,7 @@ jobs:
         Invoke-WebRequest $pythonInstallerUrl -OutFile setup-python.exe
         Start-Process "setup-python.exe" -argumentlist "/quiet PrependPath=1 TargetDir=C:\Python313 Include_freethreaded=1" -wait
         Rename-Item -Path "C:\Python313\python.exe" -NewName "pythonw3.13.exe"
-        Rename-Item -Path "C:\Python313\pythonw3.13t.exe" -NewName "python.exe"
+        Rename-Item -Path "C:\Python313\python3.13t.exe" -NewName "python.exe"
 
     - uses: actions/checkout@v4
     # - name: Set up Python nogil-3.9.10
