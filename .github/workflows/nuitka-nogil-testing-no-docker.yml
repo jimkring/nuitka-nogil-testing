@@ -54,6 +54,10 @@ jobs:
     #   with:
     #     default: "${{ matrix.python }}"
     #     # command: pip install -U pip  # upgrade pip after installing python
+    - name: test source
+      run: |
+        python main.py
+    
     - name: Install dependencies
       run: |
         pip install --no-cache-dir -r requirements.txt        
