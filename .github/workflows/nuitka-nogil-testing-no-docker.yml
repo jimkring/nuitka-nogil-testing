@@ -89,9 +89,11 @@ jobs:
       run: |
         .\main.dist\main.exe
 
-    - name: upload nuitka crash report
+    - name: upload nuitkas report
       uses: actions/upload-artifact@v4
-      if: failure()
+      if: always()
       with:
-        name: nuitka-crash-report-${{ matrix.os }}
-        path: nuitka-crash-report.xml
+        name: nuitka-report-${{ matrix.os }}
+        path: |
+          nuitka-crash-report.xml
+          report.xml
