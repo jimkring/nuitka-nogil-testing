@@ -69,13 +69,14 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: |
         pip install --no-cache-dir -r requirements.txt
-        python -Xgil=0 -m nuitka --standalone --assume-yes-for-downloads --force-runtime-environment-variable PYTHON_GIL=0 main.py
+        PYTHON_GIL=0 python -m nuitka --standalone --assume-yes-for-downloads --report=report.xml main.py
 
     - name: Build (Windows)
       if: matrix.os == 'windows-latest'
       run: |
+        set PYTHON_GIL=0
         C:\Python313\python3.13t.exe -m pip install --no-cache-dir -r requirements.txt        
-        C:\Python313\python3.13t.exe -Xgil=0 -m nuitka --assume-yes-for-downloads --standalone --force-runtime-environment-variable PYTHON_GIL=0 main.py
+        C:\Python313\python3.13t.exe -m nuitka --assume-yes-for-downloads --standalone --report=report.xml main.py
 
     - name: Run Built App (Linux)
       if: matrix.os == 'ubuntu-latest'
