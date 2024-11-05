@@ -58,7 +58,6 @@ jobs:
     - uses: Quansight-Labs/setup-python@v5
       with:
         python-version: '${{ matrix.python-version }}'  # Supports free-threaded version
-    - run: python my_script.py
 
     - name: test source (linux)
       if: matrix.os == 'ubuntu-latest'
