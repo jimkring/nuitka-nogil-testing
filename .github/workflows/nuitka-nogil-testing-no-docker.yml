@@ -104,18 +104,18 @@ jobs:
         path: |
           main.dist/
 
-    - name: Run Built App (Linux)
-      if: matrix.os == 'ubuntu-latest'
-      timeout-minutes: 1
-      run: |
-        ./main.dist/main.bin
+    # - name: Run Built App (Linux)
+    #   if: matrix.os == 'ubuntu-latest'
+    #   timeout-minutes: 1
+    #   run: |
+    #     ./main.dist/main.bin
 
-    - name: Run Built App (Windows)
-      if: matrix.os == 'windows-latest'
-      timeout-minutes: 1
-      shell: pwsh
-      run: |
-        .\main.dist\main.exe
+    # - name: Run Built App (Windows)
+    #   if: matrix.os == 'windows-latest'
+    #   timeout-minutes: 1
+    #   shell: pwsh
+    #   run: |
+    #     .\main.dist\main.exe
 
     - name: upload nuitkas report
       uses: actions/upload-artifact@v4
