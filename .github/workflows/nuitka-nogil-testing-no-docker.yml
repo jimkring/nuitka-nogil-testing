@@ -20,8 +20,8 @@ jobs:
       fail-fast: false
       matrix:
         python-version:
-          - '3.13t'
-          # - '3.13'
+          # - '3.13t'
+          - '3.13'
         gil:
           - 1
         os:
