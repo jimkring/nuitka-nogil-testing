@@ -76,14 +76,14 @@ jobs:
     - name: test source (windows)
       if: matrix.os == 'windows-latest'
       run: |
-        set PYTHON_GIL=0
+        set PYTHON_GIL=${{ matrix.gil }}
         python main.py
 
     - name: Build (Linux)
       if: matrix.os == 'ubuntu-latest'
       run: |
         pip install --no-cache-dir -r requirements.txt
-        PYTHON_GIL=1 python -m nuitka --standalone --assume-yes-for-downloads --report=report.xml main.py
+        PYTHON_GIL=${{ matrix.gil }} python -m nuitka --standalone --assume-yes-for-downloads --report=report.xml main.py
 
     # - name: Build (Windows)
     #   if: matrix.os == 'windows-latest'
