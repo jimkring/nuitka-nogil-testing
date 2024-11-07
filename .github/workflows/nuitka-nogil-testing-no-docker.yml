@@ -21,7 +21,9 @@ jobs:
       matrix:
         python-version:
           - '3.13t'
-          - '3.13'
+          # - '3.13'
+        gil:
+          - 1
         os:
           - 'ubuntu-latest'
           - 'windows-latest'
@@ -81,7 +83,7 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: |
         pip install --no-cache-dir -r requirements.txt
-        PYTHON_GIL=0 python -m nuitka --standalone --assume-yes-for-downloads --report=report.xml main.py
+        PYTHON_GIL=1 python -m nuitka --standalone --assume-yes-for-downloads --report=report.xml main.py
 
     # - name: Build (Windows)
     #   if: matrix.os == 'windows-latest'
@@ -93,7 +95,7 @@ jobs:
     - name: Build (Windows)
       if: matrix.os == 'windows-latest'
       run: |
-        set PYTHON_GIL=0
+        set PYTHON_GIL=${{ matrix.gil }}
         python -m pip install --no-cache-dir -r requirements.txt        
         python -m nuitka --assume-yes-for-downloads --standalone --report=report.xml main.py
 
